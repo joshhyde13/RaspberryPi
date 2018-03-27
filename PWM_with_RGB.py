@@ -36,9 +36,9 @@ def run(t=.2, duty_cycle_range=50):
     p_green.start(0)
     # duty cycle value can be 0.0 to 100.0%, floats are OK
     for i in range(1,duty_cycle_range):
-        p_green.ChangeDutyCycle(i)
-        p_red.ChangeDutyCycle(50-i)
-        p_blue.ChangeDutyCycle(25-i/2)
+        p_red.ChangeDutyCycle(i)
+        p_blue.ChangeDutyCycle(50-i)
+        p_green.ChangeDutyCycle(25-i/2)
         time.sleep(t)
     # can also change the frequency Hz (floats also work) --> p_red.ChangeFrequency(100)
 
