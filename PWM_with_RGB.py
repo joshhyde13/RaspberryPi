@@ -43,7 +43,7 @@ def PWM_setup(pins={'red':11, 'green':12, 'blue':13}, Hz={'red':500, 'green':500
     p_blue = GPIO.PWM(pins['blue'], Hz['blue'])
 
 
-def run(t=.1):
+def run(t=.05):
     """
     INPUT:
        t = time in seconds between PWM changes
@@ -55,9 +55,9 @@ def run(t=.1):
     p_green.start(0)
     # duty cycle value can be 0.0 to 100.0%, floats are OK
     l = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-    for r in l:
+    for g in l:
         for b in l:
-            for g in l:
+            for r in l:
                 p_red.ChangeDutyCycle(r)
                 p_blue.ChangeDutyCycle(b)
                 p_green.ChangeDutyCycle(g)
